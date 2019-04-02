@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript">
+	   //冒泡排序
+	   var arr = [23,34,435,32422,66,48644,36,6,7,43,6,35,5,3,]
+	   function bubbluSort(){
+		   for(var i=0;i<arr.length - 1;i++){
+			   for(var j=0;j<arr.length -1 - i;j++){
+				   if(arr[j]>arr[j+1]){
+					   var temp = arr[j]
+					   arr[j] = arr[j+1]
+					   arr[j+1] = temp
+				   }
+			   }
+		   }
+	   }
+	   bubbluSort()
+	   console.log(arr)
+	   
+	   //去重
+	   var uniqueArr = [1,1,1,2,2,3,3,3,3,3,3,3,4,5,66,66]
+	   var a = uniqueArr.filter(function(element,index,self){
+		   return self.indexOf(element) === index
+	   })
+	   console.log(a)
+	   //去重封装
+	   Array.prototype.unique = function(){
+		   return this.filter(function(element,index,self){
+			   return self.indexOf(element) === index
+		   })
+	   }
+	   var newArr = uniqueArr.unique()
+	   console.log(newArr)
+	   
+	   //数组最大值/最小值
+	   var max = Math.max.apply(null,uniqueArr)
+	   var min = Math.min.apply(null,uniqueArr)
+	   console.log(max)
+	   console.log(min)
+	</script>
+</body>
+
+</html>
